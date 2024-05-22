@@ -1,8 +1,7 @@
-package com.la.supermarket.domain.repository;
+package com.la.supermarket.persistence.mappper;
 
 import com.la.supermarket.domain.Product;
 import com.la.supermarket.persistence.entity.Producto;
-import com.la.supermarket.persistence.mappper.CategoryMapper;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -18,10 +17,10 @@ public interface ProductMapper {
             @Mapping(source = "nombre", target = "name"),
             @Mapping(source = "idCategoria", target = "categoryId"),
             @Mapping(source = "precioVenta", target = "price"),
-            @Mapping(source = "catidadStock", target = "stock"),
+            @Mapping(source = "cantidadStock", target = "stock"),
             @Mapping(source = "estado", target = "active"),
-            //como category tiene su propio mapper incluyo una propiedad uses en Mapper
             @Mapping(source = "categoria", target = "category")
+            //como category tiene su propio mapper incluyo una propiedad uses en Mapper
     })
     Product toProduct(Producto producto);
     //como es el mismo tipo de conversión no se requiere repetir todo el MAppings
