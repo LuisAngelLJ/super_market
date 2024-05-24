@@ -29,7 +29,7 @@ public class Compra {
     @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
     private Cliente cliente;
 
-    @OneToMany(mappedBy = "compra")//acceder a todos los productos de esta compra
+    @OneToMany(mappedBy = "compra", cascade = {CascadeType.ALL})//acceder a todos los productos de esta compra
     private List<ComprasProducto> productos;
 
     public Integer getIdCompra() {

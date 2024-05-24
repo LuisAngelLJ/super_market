@@ -13,6 +13,7 @@ public class ComprasProducto {
 
     //Relación con la clase compra
     @ManyToOne
+    @MapsId("idCompra")//nombre de el id que quiero que se enlace
     @JoinColumn(name = "id_compra", insertable = false, updatable = false)
     private Compra compra;
 
